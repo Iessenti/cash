@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200300400500600700800900&family=Open+Sans:wght@300400500600700800&display=swap')
+  
+html 
+  box-sizing: border-box
+  height: 100%
+  margin: 0
+  padding: 0
+  
+body 
+  height: 100%
+  min-height: 100%
+  width: 100vw
+  margin: 0
+  padding: 0
+  background-color: #FCFCFD
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  font-family: Montserrat, sans-serif
+  font-size: 14px
+  
+.container 
+    width: 100vw
+    height: 100vh
+    background: #F4F4F4
+    margin: 0
+    padding: 0
+    overflow-x: hidden
+    
+    display: flex
+    justify-content: center
+    align-items: center
+
+a
+  text-decoration: none
+
+.image-background
+  width: 100%
+  height: 100%
+  background-image: url('./assets/background.png')
+  background-size: cover
+
+  display: flex
+  justify-content: center
+  align-items: center
+
+.circle
+  background: #502EAA
+  width: 90px
+  height: 90px
+  border-radius: 90px 
+  @media (max-width: 640px)
+    width: 60px
+    height: 60px
+    border-radius: 60px 
+
+.standard-button
+  width: fit-content
+  box-sizing: border-box
+  padding: 4px 32px
+  border: 3.82716px solid #502EAA
+  border-radius: 16px
+
+  font-family: Jost, sans-serif
+  font-style: normal
+  font-weight: bold
+  font-size: 24px
+  line-height: 28px
+  color: #502EAA
+
+  cursor: pointer
+  transition: all .4s ease
+  a
+    color: #502EAA
+  &:hover
+    background: #502EAA
+    color: white
+    & > a
+      color: white
+
+
+input
+
+  box-sizing: border-box
+  padding: 4px 18px
+  width: 100%
+  max-width: 340px
+
+  background: #DDE5FB
+  border: 2px solid #502EAA
+  box-sizing: border-box
+  border-radius: 24px
+
+  font-family: Jost, sans-serif
+  font-style: normal
+  font-weight: normal
+  font-size: 25px
+  line-height: 36px
+
+  color: #502EAA
+  &::placeholder
+    font-family: Jost, sans-serif
+    font-style: normal
+    font-weight: normal
+    font-size: 25px
+    line-height: 36px
+
+    color: #502EAA
+    opacity: 0.75
+  &:active, &:focus
+    outline: 0
+    outline-offset: 0
