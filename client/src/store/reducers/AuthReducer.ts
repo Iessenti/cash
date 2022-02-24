@@ -14,7 +14,7 @@ export const TRY_TO_REGISTER = 'TRY_TO_REGISTER'
 export const SET_USER_NAME = 'SET_USER_NAME'
 
 // auth reducer
-const initialState: ResultInterface = {
+let initialState: ResultInterface = {
     token: '',
     phone: '',
     isUserExist: false,
@@ -22,11 +22,19 @@ const initialState: ResultInterface = {
     name: ''
 }
 
+if (localStorage.userdata && localStorage.userdata.length && localStorage.userdata.length > 0) {
+    let data = JSON.parse(localStorage.userdata)
+    if (data.phone && data.id) {
+        initialState = data
+    }
+}
+
 export const AuthReducer = (state = initialState, action: any) => {
 
     switch (action.type) {
 
         case SET_IS_USER_AUTHORIZED:
+            localStorage.setItem('userdata', JSON.stringify(action.payload))
             return action.payload
 
         case SET_USER_NAME:

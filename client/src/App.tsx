@@ -23,15 +23,15 @@ function App() {
               isUserAuthorized
               ?
               <>
-                
+                <Route path={routes.register} element={<RegisterPage/>} />
+                <Route path={routes.newAccount} element={<NewAccountPage/>} />
+                <Route path={routes.home} element={<MainPage/>} />             
               </>
               :
               <>
                 <Route path={routes.main} element={<HomePage/>} />
                 <Route path={routes.auth} element={<AuthPage/>} />   
-                <Route path={routes.register} element={<RegisterPage/>} />
-                <Route path={routes.newAccount} element={<NewAccountPage/>} />
-                <Route path={routes.home} element={<MainPage/>} />
+
               </>
             }
 
