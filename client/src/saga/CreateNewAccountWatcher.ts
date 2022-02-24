@@ -9,7 +9,7 @@ const asyncTryToCreateAccount = async (data: {currentValue: string; accountName:
         const id = store.getState().auth.id
 
         const response = await fetch(
-            apiUrl + '/auth/login',
+            apiUrl + '/createBankbook/',
             {
                 method: 'POST',
                 headers: {

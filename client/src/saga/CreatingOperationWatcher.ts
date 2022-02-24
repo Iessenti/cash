@@ -9,7 +9,7 @@ const asyncTryToCreateOperation = async (form: OperationInterface) => {
     try {
 
         const response = await fetch(
-            apiUrl + '/auth/login',
+            apiUrl + '/makeOperation/',
             {
                 method: 'POST',
                 headers: {
