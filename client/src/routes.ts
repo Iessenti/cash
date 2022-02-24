@@ -1,4 +1,7 @@
 export const routes = {
     main: '/',
-    auth: '/auth'
+    auth: '/auth',
+    register: '/register',
+    newAccount: '/create-new-account',
+    home: '/asd'
 }

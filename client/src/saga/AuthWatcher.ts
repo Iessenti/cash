@@ -1,10 +1,10 @@
-import { call, takeEvery } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { apiUrl } from "../consts";
 import { ResultInterface, setIsUserAuthotized, TRY_TO_LOGIN } from "../store/reducers/AuthReducer";
 
 const asyncTryToLogin = async (phone: string) => {
     try {
-        console.log(phone)
+        
         const response = await fetch(
             apiUrl + '/auth/login',
             {
@@ -18,9 +18,10 @@ const asyncTryToLogin = async (phone: string) => {
 
         if (response.status === 200) {
             const result: ResultInterface = await response.json()
+            console.log(result)
             return result
         }
-
+        
     } catch(error) {
         console.log(error)
     }
@@ -30,7 +31,7 @@ function* AuthWorker(action: {type: string, payload: string}) {
     const data: ResultInterface | null = yield call(asyncTryToLogin, action.payload)
 
     if (data && data.phone) {
-        setIsUserAuthotized(data)
+        yield put( setIsUserAuthotized(data) )
     }
 }
 

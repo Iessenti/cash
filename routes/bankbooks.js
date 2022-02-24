@@ -3,9 +3,7 @@ const dbpool = require('../database')
 const router = express.Router()
 const jsonParser = express.json();
 
-const sql1 = `SELECT * FROM bankbooks WHERE phone=?`
-const sql2 = `SELECT * FROM users WHERE phone=?`
-const sql3 = `INSERT bankbooks(name, userId, currentValue) VALUES (?)`
+const sql1 = `SELECT * FROM bankbooks WHERE phone=?` 
 
 router.get(
     '/getBankbooks/',
@@ -34,16 +32,22 @@ router.post(
         try {
 
             let { 
-                phone, 
-                name,
+                id, 
+                accountName,
                 currentValue
             } = req.body
 
-            dbpool.query( sql2, phone, (err, results) => {
+            dbpool.query( `SELECT * FROM users WHERE phone=?`, [id], (err, results) => {
                 if (results && results.length > 0) {
-
-                    dbpool.query( sql3, [name, results[0].id, currentValue] )
-                    res.status(200)
+                    let accountId = 0
+                    dbpool.query( 
+                        `INSERT bankbooks(name, userId, currentValue) VALUES (?)`, 
+                        [accountName, results[0].id, currentValue],
+                        (err, result) => {  
+                            accountId = result.insertId
+                        }    
+                    )
+                    res.status(200).json({ accountId: accountId })
                     
                 }
             })

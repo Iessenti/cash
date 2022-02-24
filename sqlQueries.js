@@ -25,7 +25,7 @@ const sqlQueries = {
         type VARCHAR(1),
         color VARCHAR(7),
         value FLOAT,
-        date DATE,
+        date VARCHAR(10),
         bankbookId INT,
         FOREIGN KEY (bankbookId) REFERENCES bankbooks (bankbookId)
     )`

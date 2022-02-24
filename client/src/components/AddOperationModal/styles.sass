@@ -1,0 +1,176 @@
+.add-operation-modal-wrapper
+    position: relative
+
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    width: 70vw
+    height: 90vh
+
+    background: rgb(80, 46, 170)
+
+    border-radius: 20px
+
+    -webkit-box-shadow: 0px 0px 9px 6px rgba(34, 60, 80, 0.2)
+    -moz-box-shadow: 0px 0px 9px 6px rgba(34, 60, 80, 0.2)
+    box-shadow: 0px 0px 9px 6px rgba(34, 60, 80, 0.2)
+
+    box-sizing: border-box
+    padding: 144px 0
+
+    @media (max-width: 640px)
+        width: 100vw
+        height: 100vh
+        border-radius: 0px
+
+    &__close-icon
+        position: absolute
+        right: 5%
+        top: 4%
+
+        transform: rotate(45deg)
+
+        font-family: Jost, sans-serif
+        font-style: normal
+        font-weight: 500
+        font-size: 60px
+        line-height: 64px
+        display: flex
+        align-items: center
+
+        color: #DFE0FB
+
+        transition: all .8s ease
+
+        cursor: pointer
+
+        @media (max-width: 640px)
+            top: 3px
+            right: 5px
+            padding: 0 20px
+
+        &:hover
+            transform: rotate(150deg)
+
+    &__value-row
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        flex-wrap: wrap
+
+        width: 50%
+
+        @media (max-width: 640px)
+            flex-direction: column
+            width: 70%
+        & > div
+            display: flex
+            flex-direction: row
+            align-items: center
+            @media (max-width: 640px)
+                margin-bottom: 16px
+        &__operand-button
+            width: 60px
+            height: 60px
+
+            border-radius: 60px
+
+            display: flex
+            justify-content: center
+            align-items: center
+
+            background: #DFE0FB
+            box-sizing: border-box
+            font-family: Jost, sans-serif
+            font-style: normal
+            font-weight: 500
+            font-size: 60px
+            line-height: 60px
+            display: flex
+            align-items: center
+
+            color: rgb(80, 46, 170)
+
+            transition: all .2s ease
+
+            cursor: pointer
+        
+        .choosen-operand-button
+            box-shadow: 0px 0px 9px 60px rgba(80, 46, 170, 0.2) inset
+            border: 3px solid #DFE0FB
+
+    &__categories-row
+        display: flex
+        flex-direction: row
+        
+        width: 100%
+        max-width: 90%
+        overflow: hidden    
+
+        margin-top: 32px
+
+        &__inside-wrapper
+            overflow-x: scroll
+            display: flex
+            flex-direction: row
+            &::-webkit-scrollbar 
+                width: 0px
+                background: transparent
+            & > div
+                box-sizing: content-box
+                padding: 12px 20px
+
+                background: #DFE0FB
+
+                margin: 0 6px
+                border-radius: 12px
+
+                font-family: Jost, sans-serif
+                font-style: normal
+                font-weight: 500
+                font-size: 28px
+                line-height: 32px
+                display: flex
+                align-items: center
+
+                transition: all .4s ease
+                cursor: pointer
+                border: 3px solid #DFE0FB
+            .choosen-spend-category-panel
+                box-shadow: 0px 0px 9px 60px rgba(80, 46, 170, 0.2) inset
+
+    &__description
+        color: #DFE0FB
+        text-align: center
+        font-family: Jost, sans-serif
+        font-style: normal
+        font-weight: 500
+        font-size: 28px
+        line-height: 32px
+        display: flex
+        align-items: center
+
+    &__button
+        color: #DFE0FB
+        text-align: center
+        font-family: Jost, sans-serif
+        font-style: normal
+        font-weight: 500
+        font-size: 32px
+        line-height: 36px
+        display: flex
+        align-items: center
+
+        border: 3px solid #DFE0FB
+
+        transition: all .6s ease
+
+        box-sizing: border-box
+        padding: 12px 24px
+        border-radius: 20px
+        margin-top: auto
+        &:hover
+            color: rgb(80, 46, 170)
+            background: #DFE0FB

@@ -2,13 +2,14 @@ const express = require('express')
 const dbpool = require('./database')
 const app = express()
 
+const cors = require('cors')
+app.use(cors())
 
 const sqlQueries = require('./sqlQueries')
 
 app.use('/api/auth/', require('./routes/auth'))
 app.use('/api/bankbooks/', require('./routes/bankbooks'))
 app.use('/api/operations/', require('./routes/operations'))
-
 
 async function start() {
 	try {

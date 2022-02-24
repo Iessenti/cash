@@ -1,0 +1,27 @@
+.circle-wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto
+    margin-top: 24px
+    &__button
+        font-size: 34px
+
+.circle
+    width: 300px
+	height: 300px
+	border: 1px solid #ccc
+	border-radius: 50%
+	position: relative
+	overflow: hidden
+
+	.sector
+		position: absolute
+		transform-origin: 100% 100%
+		width: 5000px
+		height: 5000px
+		left: 50%
+		top: 50%
+		border: 1px solid #999
+		margin-top: -5000px
+		margin-left: -5000px
