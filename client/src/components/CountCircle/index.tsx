@@ -85,7 +85,7 @@ export const CountCircle = () => {
             </div>
 
             <div
-                className="circle"
+                className="count-circle"
             >
                 {
                     countsArray.plus.map( (elem: number, index: number) => {

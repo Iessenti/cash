@@ -32,7 +32,7 @@ export const HomePageContainer = () => {
                     <span
                         className='homepage-wrapper__right-side__desc'
                     >
-                        В новейший инструмент учета личных финансов            
+                        В новейший инструмент<br/> учета личных финансов            
                     </span>
 
                     <div
